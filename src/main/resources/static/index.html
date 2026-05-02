@@ -573,7 +573,6 @@
             } else { setMsg(msg, data.message, 'err'); }
         } catch(e) { setMsg(msg,'Server error','err'); }
     }
-
     async function doDeposit() {
         const amt = parseFloat(v('a-amt')), msg = $('a-msg');
         if (!amt || amt <= 0) { setMsg(msg,'Enter a valid amount','err'); return; }
