@@ -49,20 +49,28 @@
     color: rgb(45, 255, 13); 
 }
 .auth-card {
-    background: #d6d4fe;
+    background: rgba(125, 93, 255, 0.6);
     border-radius: 24px;
     padding: 40px;
-    width: 450px;
-    height:420px;
-    background: rgba(125, 93, 255, 0.6);
-    box-shadow: 
-        0 0 10px rgba(255, 19, 228, 0.521),  
-        0 0 20px rgba(233, 28, 202, 0.1), 
-        0 0 40px rgba(255, 35, 163, 0.8);       
+    width: 450px; 
+    height: auto;
+    min-height: 420px;
+    box-shadow: 0 0 10px rgba(255, 19, 228, 0.521),  
+                0 0 40px rgba(255, 35, 163, 0.8);       
     transition: all 0.3s ease;
     border: 1px solid #0a1112;
-
-}       
+    box-sizing: border-box; 
+}
+@media (max-width: 480px) {
+    .auth-card {
+        width: 90%; 
+        padding: 25px;
+        border-radius: 16px; 
+    }
+    #auth-screen {
+        background-size: cover;
+    }
+}    
  .tab-switch{display:grid;grid-template-columns:1fr 1fr;background:var(--bg);border-radius:10px;padding:4px;margin-bottom:28px;gap:0}
         .tab-btn{padding:10px;border-radius:8px;font-size:14px;font-weight:700;background:none;color:var(--text3);transition:all .2s}
         .tab-btn.active{background:var(--white);color:var(--text);box-shadow:var(--shadow)}
@@ -208,20 +216,44 @@
         .profile-email{font-size:13px;color:var(--text3);margin-top:2px}
 
   
-        @media(max-width:992px){
-            #app{grid-template-columns:1fr}
-            .sidebar{position:fixed;top:0;left:-260px;z-index:999;transition:.3s ease}
-            .sidebar.open{left:0}
-            .main{margin-left:0;padding:16px}
-            .bal-hero{flex-direction:column;align-items:flex-start;gap:18px}
-            .bh-actions{width:100%;display:grid;grid-template-columns:repeat(3,1fr)}
-            .ph{flex-direction:column;gap:10px}
-            .stats{grid-template-columns:1fr;justify-content:stretch}
-        }
-    </style>
+    @media (max-width: 768px) {
+    .sidebar {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        bottom: 0;
+        width: 280px;
+        z-index: 9999;
+        transition: left 0.3s ease;
+        overflow-y: auto; 
+        display: flex;
+        flex-direction: column;
+    }
+    #app {
+        grid-template-columns: 1fr; 
+    }
+    .sidebar.active {
+        left: 0; 
+    }
+  .main{
+    margin-left:0 !important;
+    width:100%;
+  }
+    .sidebar-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.5);
+        z-index: 9998;
+    }
+    .sidebar-overlay.active {
+        display: block;
+    }
+}
+</style>
 </head>
 <body>
-
+<div class="sidebar-overlay" id="overlay"></div>
 <div id="toast"></div>
 
 <div id="auth-screen">
@@ -644,13 +676,26 @@
         return r.json();
     }
 
-    function toggleSidebar() {
-        if (window.innerWidth <= 992) {
-            document.querySelector('.sidebar').classList.toggle('open');
+  document.addEventListener("DOMContentLoaded", () => {
+
+    const sidebar = document.querySelector('.sidebar');
+    const overlay = document.getElementById('overlay');
+
+    window.toggleSidebar = function () {
+        if (window.innerWidth <= 768) {
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
         } else {
             document.getElementById('app').classList.toggle('sidebar-hide');
         }
-    }
+    };
+
+    overlay.addEventListener('click', () => {
+        sidebar.classList.remove('active');
+        overlay.classList.remove('active');
+    });
+
+});
 
     window.addEventListener("load", () => {
         const saved = localStorage.getItem("hybridUser");
