@@ -1,4 +1,4 @@
-# HybridPay — A Digital Payment Processing Platform
+# HybridPay - A Digital Payment Processing Platform
 
 HybridPay is a full-stack digital payment system inspired by modern fintech platforms like Paytm, PhonePe, and Google Pay. It allows users to securely manage their wallet, send money, track transactions, and simulate real-world payment workflows.
 
