@@ -115,11 +115,11 @@ HybridPay/
 
 ---
 ### Output Screenshots
-![Login](outcome-images/1.png)
-![Dashboard](outcome-images/2.png)
-![Mobile responsive-1](outcome-images/3.png)
-![Mobile responsive-2](outcome-images/4.png)
-![Mobile responsive-3](outcome-images/5.png)
+![Login](outcome-Images/1.png)
+![Dashboard](outcome-Images/2.png)
+![Mobile responsive-1](outcome-Images/3.jpeg)
+![Mobile responsive-2](outcome-Images/4.jpeg)
+![Mobile responsive-3](outcome-Images/5.jpeg)
 
 ---
 
