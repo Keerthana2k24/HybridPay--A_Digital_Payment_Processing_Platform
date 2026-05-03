@@ -111,44 +111,16 @@ HybridPay/
 
 ## ⚙️ Installation & Setup
 
-### 🔹 1. Clone the Repository
-
-```
-git clone https://github.com/keerthana2k24/hybridpay.git
-cd hybridpay
-```
----
-
-### 🔹 2. Configure Database
-
-Update `application.properties`:
-
-```
-spring.datasource.url=jdbc:mysql://<HOST>:<PORT>/<DB_NAME>
-spring.datasource.username=<USERNAME>
-spring.datasource.password=<PASSWORD>
-```
+ - [Installation & Deployment Steps](docs/Installation_Deployment_steps.pdf)
 
 ---
+### Output Screenshots
+![Login](outcome-images/1.png)
+![Dashboard](outcome-images/2.png)
+![Mobile responsive-1](outcome-images/3.png)
+![Mobile responsive-2](outcome-images/4.png)
+![Mobile responsive-3](outcome-images/5.png)
 
-### 🔹 3. Run Backend
-
-```
-./mvnw spring-boot:run
-```
-
----
-
-### 🔹 4. Access Application
-
-```
-http://localhost:8080 
-```
----
-
-##  Deployment Steps
-
-- Refer Deployment_steps.pdf file for detailed implementation
 ---
 
 ## Future Enhancements
