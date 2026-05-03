@@ -535,11 +535,14 @@
             $('d-sent').textContent    = '₹' + fmt(data.totalSent || 0);
             $('d-txn').textContent     = data.totalTransactions || 0;
             $('d-upi').textContent     = data.upiId || 'Not linked';
-        } catch(e) { console.error('Dashboard error', e); }
         await loadHistory();
         const el = $('d-recent');
         if (!HIST.length) { el.innerHTML = emptyState('No transactions yet. Make your first payment!'); return; }
         el.innerHTML = HIST.slice(0,5).map(txnRow).join('');
+        }
+         catch(e) { console.error('Dashboard error', e);
+            
+         }
     }
 
     async function doSend() {
