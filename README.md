@@ -117,9 +117,11 @@ HybridPay/
 ### Output Screenshots
 ![Login](outcome-Images/1.png)
 ![Dashboard](outcome-Images/2.png)
-![Mobile responsive-1](outcome-Images/3.jpeg)
-![Mobile responsive-2](outcome-Images/4.jpeg)
-![Mobile responsive-3](outcome-Images/5.jpeg)
+<p align="center">
+  <img src="outcome-Images/3.jpeg" width="150"/>
+  <img src="outcome-Images/4.jpeg" width="150"/>
+  <img src="outcome-Images/5.jpeg" width="150"/>
+</p>
 
 ---
 
